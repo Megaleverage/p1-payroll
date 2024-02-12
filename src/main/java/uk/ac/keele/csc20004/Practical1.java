@@ -58,6 +58,14 @@ public class Practical1 {
         employees.add(e4);
 
         // Now try to add a new employee, using the new class you created
+        
+        // A minimum wage employee
+        Employee e5 =
+        new MinimumWageEmployee("Dave",
+            "Davidson", 
+            "123-ABCD-321",
+            19, 50);
+        employees.add(e5);
 
         // print all employees
         // this will use the toString() method of the Employee class (or its subclasses)

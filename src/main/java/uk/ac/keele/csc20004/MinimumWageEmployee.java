@@ -20,6 +20,8 @@ import uk.ac.keele.csc20004.legacy.HourlyEmployee;
  */
 public class MinimumWageEmployee extends HourlyEmployee {
 
+    int Age = 0;
+
     /**
      * Constructor for the class representing an employee with a minimum wage
      * contract.
@@ -37,6 +39,8 @@ public class MinimumWageEmployee extends HourlyEmployee {
      */
     public MinimumWageEmployee(String firstName, String lastName, String socialSecurityNumber, int age, double hours) {
         super(firstName, lastName, socialSecurityNumber, 0.0, hours);
+
+        Age = age;
 
         this.setWage(age);
     }
@@ -56,9 +60,21 @@ public class MinimumWageEmployee extends HourlyEmployee {
         if (age < 18) {
             throw new IllegalArgumentException("Age must be greater than 18");
         }
+
         double wage = 0.0;
+
+        if (age >= 18 && age < 21) {
+            wage = 7.49;
+        }
+
+        if (age >= 21 && age < 23) {
+            wage = 10.18;
+        }
+
+        if (age >= 23) {
+            wage = 10.42;
+        }
         
-        // TODO: compute the wage as per requirements (based on the age)
         super.setWage(wage);
     }
 
@@ -85,8 +101,11 @@ public class MinimumWageEmployee extends HourlyEmployee {
      * @return the age of the employee
      */
     public int getAge() {
-        // TODO: fix as appropriate
-        return -1;
+        if (Age != 0) {
+            return Age;
+        } else {
+            return -1;
+        }
     }
 
     /**
