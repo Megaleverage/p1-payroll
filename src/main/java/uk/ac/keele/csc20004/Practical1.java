@@ -8,6 +8,8 @@
 package uk.ac.keele.csc20004;
 
 import java.util.ArrayList;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 import uk.ac.keele.csc20004.legacy.CommissionEmployee;
 import uk.ac.keele.csc20004.legacy.Employee;
@@ -21,7 +23,8 @@ import uk.ac.keele.csc20004.legacy.SalariedEmployee;
 public class Practical1 {
     public static void main(String[] args) {
         // A data structure to hold employees
-        ArrayList<Employee> employees = new ArrayList<Employee>();
+        //ArrayList<Employee> employees = new ArrayList<Employee>();
+        Deque<Employee> employees = new ArrayDeque<>();
 
         // Adding a couple of employes, with different types of contracts
 
